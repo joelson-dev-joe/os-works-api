@@ -1,12 +1,17 @@
 package com.osworks.api.domain.model;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class Cliente implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+@Entity
+public class Cliente {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String nome;
 	private String email;
 	private String telefone;
